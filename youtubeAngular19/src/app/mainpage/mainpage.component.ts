@@ -7,7 +7,7 @@ import { ServiceService } from '../service.service';
 
 @Component({
   selector: 'app-mainpage',
-  imports: [MaterialModule],
+  imports: [MaterialModule, DragDropModule],
   templateUrl: './mainpage.component.html',
   styleUrl: './mainpage.component.css'
 })
