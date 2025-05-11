@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using YoutubeDotNet9.Models;
 
 namespace YoutubeDotNet9.Controllers
 {
