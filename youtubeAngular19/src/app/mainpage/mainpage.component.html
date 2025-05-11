@@ -1,1 +1,9 @@
-<p>mainpage works!</p>
+<h3>Angular 19 .NET 9 APP</h3>
+
+<div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)" style="margin-bottom: 30px;">
+  @for (pokemon of lstData; track pokemon) {
+    <div class="example-box" cdkDrag>
+      {{pokemon.name}}
+    </div>
+  }
+</div>

@@ -3,11 +3,13 @@ import { MaterialModule } from '../material/material.module';
 import {DragDropModule} from '@angular/cdk/drag-drop';
 import {CdkDragDrop, CdkDropList, CdkDrag, moveItemInArray} from '@angular/cdk/drag-drop';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { ServiceService } from '../service.service';
 
 @Component({
   selector: 'app-mainpage',
   imports: [
-    MaterialModule
+    DragDropModule,
+    MaterialModule,
   ],
   templateUrl: './mainpage.component.html',
   styleUrl: './mainpage.component.scss'
