@@ -1,0 +1,6 @@
+@YoutubeDotNet9_HostAddress = http://localhost:5105
+
+GET {{YoutubeDotNet9_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
