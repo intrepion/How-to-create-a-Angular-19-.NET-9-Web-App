@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using YoutubeDotNet9.Interfaces;
 using YoutubeDotNet9.Models;
 
 namespace YoutubeDotNet9.Controllers
@@ -14,10 +15,18 @@ namespace YoutubeDotNet9.Controllers
             _pokemonRepository = pokemonRepository;
         }
 
-        [HttpGet("GetPokemon")]
-        public async Task<IActionResult> GetPokemon()
+        [HttpGet("GetPokemons")]
+        public async Task<IActionResult> GetPokemons()
         {
-            var x = await _pokemonRepository.GetPokemon();
+            var x = await _pokemonRepository.GetPokemons();
+
+            return Ok(x);
+        }
+
+        [HttpGet("GetPokemonById")]
+        public async Task<IActionResult> GetPokemonById(int id)
+        {
+            var x = await _pokemonRepository.GetPokemonById(id);
 
             return Ok(x);
         }
