@@ -13,6 +13,6 @@ export class ServiceService {
 
   getAllPokemonData(): Observable<any> {
     const header = new HttpHeaders().set('Content-type', 'application/json');
-    return this.httpClient.get(this.path + 'Pokemon/GetPokemon', { headers: header });
+    return this.httpClient.get(this.path + 'Pokemon/GetPokemons', { headers: header });
   }
 }
