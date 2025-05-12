@@ -1,12 +1,19 @@
+using Microsoft.EntityFrameworkCore;
 using Scalar.AspNetCore;
+using YoutubeDotNet9.Interfaces;
+using YoutubeDotNet9.Models;
+using YoutubeDotNet9.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+builder.Services.AddDbContext<SampleDatabaseContext>(options =>
+{
+    options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection"));
+});
 
 builder.Services.AddControllers();
-// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
+builder.Services.AddScoped<IPokemonRepository, PokemonRepository>();
 
 builder.Services.AddCors(opt =>
 {
@@ -21,13 +28,13 @@ builder.Services.AddCors(opt =>
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
     app.MapScalarApiReference();
 }
 
+app.UseCors("CorsPolicy");
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
