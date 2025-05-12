@@ -16,7 +16,6 @@ import { ServiceService } from '../service.service';
 })
 export class MainpageComponent {
   private _snackBar = inject(MatSnackBar);
-  // this._snackBar.open(message, action);
 
   lstData: any = []
 
@@ -31,6 +30,7 @@ export class MainpageComponent {
     this.service.getAllPokemonData().subscribe({
       next: (res: any) => {
         console.log('pokemonObj', res);
+        this._snackBar.open("WE GOT POKEMON", "Close me");
         this.lstData = res;
       },
       error: (error: any) => {
