@@ -8,6 +8,6 @@ namespace YoutubeDotNet9.Interfaces
         Task<bool> DeletePokemon(int pokemonId);
         Task<Pokemon> EditPokemon(Pokemon pokemon);
         Task<List<Pokemon>> GetPokemons();
-        Task<Pokemon> GetPokemonById(int pokemonId);
+        Task<Pokemon?> GetPokemonById(int pokemonId);
     }
 }

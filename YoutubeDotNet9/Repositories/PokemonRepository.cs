@@ -34,7 +34,7 @@ namespace YoutubeDotNet9.Repositories
             return pokemon;
         }
 
-        public async Task<Pokemon> GetPokemonById(int pokemonId)
+        public async Task<Pokemon?> GetPokemonById(int pokemonId)
         {
             var result = await _databaseContext.Pokemons.Include(x => x.Region).Include(x => x.Type).Where(x => x.PokemonId == pokemonId)
                 .Select(x => new Pokemon
