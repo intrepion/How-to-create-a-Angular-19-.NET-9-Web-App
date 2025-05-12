@@ -1,3 +1,4 @@
+using Microsoft.EntityFrameworkCore;
 using YoutubeDotNet9.Interfaces;
 using YoutubeDotNet9.Models;
 
@@ -45,7 +46,7 @@ namespace YoutubeDotNet9.Repositories
                     Type = x.Type,
                     RegionId = x.RegionId,
                     TypeId = x.TypeId,
-                }).ToListAsync();
+                }).FirstOrDefaultAsync();
 
             return result;
         }
